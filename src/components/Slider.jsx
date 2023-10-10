@@ -6,7 +6,7 @@ import wallpaper2 from "../assets/images/img2.jpg"
 const SlickSlider = (props) => {
     // console.log("==========>", props.data);
     var settings = {
-        dots: true,
+        // dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 1,

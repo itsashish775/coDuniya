@@ -1,6 +1,8 @@
 import Header from "./components/header";
 import "./App.css"
 import SlickSlider from "./components/Slider";
+import DynamicText from "./components/dynamicText";
+import ListBar from "./components/listBar";
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
         <SlickSlider />
         <div className="firstHeader">
           <Header />
+          <ListBar/>
+          <DynamicText/>
         </div>
       </div>
     </>
