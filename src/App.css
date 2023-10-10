@@ -44,7 +44,7 @@
 }
 
 .goalText {
-  color: orangered;
+  color: #ff7900;
   font-size: 12px;
 }
 
@@ -75,7 +75,7 @@
 }
 .review .btn{
   color: white;
-  background-color: orangered;
+  background-color: #ff7900;
   padding-top: 2px;
   padding-bottom: 4px;
   display: inline-block;
