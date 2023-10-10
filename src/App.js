@@ -3,6 +3,7 @@ import "./App.css"
 import SlickSlider from "./components/Slider";
 import DynamicText from "./components/dynamicText";
 import ListBar from "./components/listBar";
+import SearchBox from "./components/SearchBox";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Header />
           <ListBar/>
           <DynamicText/>
+          <SearchBox/>
         </div>
       </div>
     </>

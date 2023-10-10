@@ -24,7 +24,7 @@ const ListBar = () => {
         <div className="listItems">
           <div className="item">
             <TbSitemap />
-            All Courdes
+            All Courses
           </div>
           {items}
         </div>

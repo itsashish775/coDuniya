@@ -171,11 +171,11 @@
   font-size: 15px;
 }
 .item:hover {
-  color: orangered;
-  border-bottom: 1px solid orangered;
+  color: #ff7900;
+  border-bottom: 1px solid #ff7900;
 }
 .pentagon:hover {
-  background-color: orangered;
+  background-color: #ff7900;
 }
 .pentagon {
   /* border: 1px solid rgb(62, 143, 72); */
@@ -186,4 +186,28 @@
   border-bottom-left-radius: 20px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 100px;
+}
+.serchSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+.serchSection .searchBtn {
+  background-color: #ff7900;
+  font-size: 25px;
+  padding: 10px 5px;
+  color: white;
+  margin-left: -2px;
+}
+.butSearchSection{
+  display: flex;
+  align-items: center;
+}
+.butSearchSection .searchBtn1 {
+  background-color: #ff7900;
+  font-size: 25px;
+  padding: 10px 5px;
+  color: white;
+  display: inline-block;
 }
