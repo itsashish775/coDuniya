@@ -6,8 +6,11 @@ import ListBar from "./components/listBar";
 import SearchBox from "./components/SearchBox";
 import StudyGoals from "./components/StudyGoals";
 import SchoolSection from "./components/SchoolSection";
+import PopRegistrationForm from "./components/PopRegistrationForm";
+import { useState } from "react";
 
 function App() {
+  const [val, setVal] = useState(true);
   return (
     <>
       {/* <Header/> */}
@@ -17,12 +20,14 @@ function App() {
           <Header />
           <ListBar />
           <DynamicText />
-          <SearchBox />
+          <SearchBox setVal={setVal}/>
         </div>
         <div className="body">
           <StudyGoals />
-          <SchoolSection/>
+          <SchoolSection />
         </div>
+
+        {val ? <PopRegistrationForm setVal={setVal} /> : ""}
       </div>
     </>
   );
