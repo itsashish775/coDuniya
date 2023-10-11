@@ -293,7 +293,7 @@ const {
                       </Grid>
                     </Stack>
                     <Stack mb={2} spacing={1}>
-                      <InputLabel htmlFor="location-login">
+                      <InputLabel htmlFor="couses-login">
                         Course Interested In
                       </InputLabel>
                       <Select
@@ -381,7 +381,7 @@ const {
                     )}
                   </Stack>
                   <Stack mb={2} spacing={1}>
-                    <InputLabel htmlFor="location-login">
+                    <InputLabel htmlFor="distance-login">
                       Looking For New Distance Course?
                     </InputLabel>
                     <Switch
@@ -409,7 +409,7 @@ const {
                       size="large"
                       type="submit"
                       variant="contained"
-                      color="primary"
+                      color="warning"
                     >
                       Save
                     </Button>
@@ -423,7 +423,7 @@ const {
                       fullWidth
                       size="large"
                       variant="outlined"
-                      color="primary"
+                      color="warning"
                     >
                       Cancel
                     </Button>
