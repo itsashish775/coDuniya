@@ -4,6 +4,7 @@ import SlickSlider from "./components/Slider";
 import DynamicText from "./components/dynamicText";
 import ListBar from "./components/listBar";
 import SearchBox from "./components/SearchBox";
+import StudyGoals from "./components/StudyGoals";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <DynamicText/>
           <SearchBox/>
         </div>
+        <StudyGoals/>
       </div>
     </>
   );

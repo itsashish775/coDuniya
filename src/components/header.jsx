@@ -25,7 +25,7 @@ const Header = () => {
           </select>
         </div>
         <div className="serchBox">
-          <div style={{fontSize:"25px"}}>
+          <div style={{fontSize:"15px"}}>
             <BsSearch />
           </div>
           <input
