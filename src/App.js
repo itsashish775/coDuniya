@@ -14,11 +14,13 @@ function App() {
         <SlickSlider />
         <div className="firstHeader">
           <Header />
-          <ListBar/>
-          <DynamicText/>
-          <SearchBox/>
+          <ListBar />
+          <DynamicText />
+          <SearchBox />
         </div>
-        <StudyGoals/>
+        <div className="body">
+          <StudyGoals />
+        </div>
       </div>
     </>
   );

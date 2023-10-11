@@ -14,6 +14,7 @@
   overflow-x: hidden;
   background-color: rgb(0 0 0 / 20%);
 }
+
 .header1 {
   display: flex;
   justify-content: space-between;
@@ -87,6 +88,7 @@
   align-items: center;
   color: white;
 }
+
 .review .btn {
   color: white;
   background-color: #ff7900;
@@ -112,6 +114,7 @@
   padding-right: 10px;
   color: white;
 }
+
 .product1 {
   position: relative;
   min-width: 1700px;
@@ -124,15 +127,18 @@
   width: 100%;
   height: 500px;
 }
+
 .firstHeader {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
 }
+
 .explore {
   color: white;
 }
+
 .bellIcon {
   text-align: center;
   border: 1px solid rgb(144, 140, 140);
@@ -141,6 +147,7 @@
   color: white;
   border-radius: 50%;
 }
+
 .manuSection {
   display: flex;
   justify-content: space-between;
@@ -149,6 +156,7 @@
   padding: 0 10px;
   border-radius: 30px;
 }
+
 .dynamicData {
   text-align: center;
   margin-top: 100px;
@@ -156,27 +164,33 @@
   top: 250px; */
   /* left: 50%; */
 }
+
 .dynamicText {
   font-size: 40px;
   font-weight: 500;
   color: white;
 }
+
 .listItems {
   display: flex;
 }
+
 .item {
   color: white;
   /* border: 1px solid white; */
   margin-right: 10px;
   font-size: 15px;
 }
+
 .item:hover {
   color: #ff7900;
   border-bottom: 1px solid #ff7900;
 }
+
 .pentagon:hover {
   background-color: #ff7900;
 }
+
 .pentagon {
   /* border: 1px solid rgb(62, 143, 72); */
   color: white;
@@ -187,12 +201,14 @@
   border-top-right-radius: 10px;
   border-bottom-right-radius: 100px;
 }
+
 .serchSection {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 40px;
 }
+
 .serchSection .searchBtn {
   background-color: #ff7900;
   font-size: 15px;
@@ -200,16 +216,106 @@
   color: white;
   margin-left: -2px;
 }
-.butSearchSection{
+
+.butSearchSection {
   display: flex;
   justify-content: end;
-  width:54%;
+  width: 54%;
   margin: 50px auto;
 }
+
 .butSearchSection .searchBtn1 {
   background-color: #ff7900;
   font-size: 15px;
   padding: 10px 10px;
   color: white;
   display: inline-block;
+}
+
+.card {
+  border: 1px solid rgb(196, 196, 196);
+  /* box-shadow: 0 0 0 0; */
+  /* display: inline-block; */
+  padding: 15px 10px 80px 10px;
+  width: 350px;
+  margin: 10px 0;
+}
+
+.card .cardHead {
+  display: flex;
+  padding: 0 0 10px 0;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.card .cardHead .cardLogo {
+  border: 1px solid rgb(158, 154, 154);
+  background-color: #c5c3c1;
+  border-radius: 50%;
+  padding: 10px;
+  margin-right: 20px;
+  width: 70px;
+  height: 70px;
+}
+
+.card .cardHead .cardLogo img {
+  width: 100%;
+}
+
+.course_list {
+  /* border: 1px solid red; */
+}
+
+.headerText h3 {
+  font-size: 25px;
+  font-weight: 500;
+  padding: 10px 0;
+}
+
+.course_list .courseItem:hover {
+  color: #ff7900;
+}
+
+.course_list .courseItem {
+  margin: 0 5px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(136, 134, 134, 0.512);
+}
+
+.body {
+  /* border: 1px solid red; */
+  width: 1400px;
+  margin: 0 auto;
+}
+
+.goal_section1 {
+  margin: 40px 0;
+}
+
+.goal_section1 h1 {
+  font-size: 45px;
+  font-weight: 500;
+  color: rgb(37, 37, 37);
+}
+
+.goal_section .slick-next {
+  color: black;
+  cursor: pointer;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 50%;
+}
+
+.goal_section .slick-prev {
+  cursor: pointer;
+  color: black;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 50%;
+}
+
+.goal_section .slick-prev:hover {
+  color: black;
+}
+
+.goal_section .slick-next:hover {
+  color: black;
 }
