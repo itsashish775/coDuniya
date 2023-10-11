@@ -5,6 +5,7 @@ import DynamicText from "./components/dynamicText";
 import ListBar from "./components/listBar";
 import SearchBox from "./components/SearchBox";
 import StudyGoals from "./components/StudyGoals";
+import SchoolSection from "./components/SchoolSection";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         </div>
         <div className="body">
           <StudyGoals />
+          <SchoolSection/>
         </div>
       </div>
     </>

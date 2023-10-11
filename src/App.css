@@ -319,3 +319,81 @@
 .goal_section .slick-next:hover {
   color: black;
 }
+.CollegeSection h1{
+  font-size: 45px;
+  font-weight: 500;
+  color: rgb(37, 37, 37);
+}
+.college_Card1 {
+  position: relative;
+  margin: 15px;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.416);
+}
+
+.collage_card {
+  border: 1px solid rgb(255, 0, 0);
+  width: 250px;
+  height: 280px;
+}
+
+.collage_card img {
+  width: 100%;
+  object-fit: cover;
+  height: 277px;
+}
+
+.card_data {
+  position: absolute;
+  bottom: 40px;
+}
+.card_data .text{
+  /* display: flex; */
+  font-weight: 500;
+  font-size: 25px;
+  /* flex-wrap: wrap; */
+  width: 250px;
+  padding-left:10px ;
+  color: rgb(222, 222, 222);
+  background-color: #00000060;
+}
+
+.indexedImg {
+  position: relative;
+ 
+}
+.allImage{
+  height: 30px;
+  width: 30px;
+  border: 1px solid black;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: 10px;
+}
+.allImage1 {
+  
+  z-index: 1;
+  left: 0;
+  background-color: #ff7700cb;
+}
+
+.allImage2 {
+ 
+  z-index: 2;
+  left: 20px;
+  background-color: #81b76680;
+}
+
+.allImage3 {
+  
+  z-index: 3;
+  left: 40px;
+  background-color: #001effae;
+}
+
+.allImage img {
+  width: 100%;
+}
+.listItemCollege{
+  display: flex;
+  flex-wrap: wrap;
+}
