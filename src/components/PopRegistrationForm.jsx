@@ -1,4 +1,5 @@
 import user from "../assets/images/user.png"
+import CustomRegistation from "./CustomRegistation"
 
 const PopRegistrationForm = ({ setVal }) => {
     let data = ["Brochure Details", "Check Detailed Fees", "Shortlist & Apply", "24/7 Counselling", "Scholarships", "Application Deadlines"]
@@ -26,6 +27,7 @@ const PopRegistrationForm = ({ setVal }) => {
                 </div>
                 <div className="right">
                     <div className="cross" onClick={() => setVal(val => !val)} > X</div>
+                    <CustomRegistation/>
                 </div>
             </div >
         </>
