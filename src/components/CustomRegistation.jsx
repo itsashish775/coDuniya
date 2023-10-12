@@ -207,6 +207,7 @@ const CustomRegistation = ({ setVal }) => {
           }
         })
         .catch(error => {
+          alert("server error")
           console.error('Error:', error);
         });
       // alert(JSON.stringify(values, null, 2));
