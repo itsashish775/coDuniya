@@ -38,7 +38,7 @@ const PopRegistrationForm = ({ setVal }) => {
                                 <p>Get details and latest updates</p>
                             </div>
                         </div>
-                        <CustomRegistation />
+                        <CustomRegistation setVal={setVal} />
                     </div>
                 </div >
             </div>

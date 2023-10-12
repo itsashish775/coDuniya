@@ -1,4 +1,7 @@
 import PropTypes from "prop-types";
+import axios from 'axios';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // third-party
 import { motion } from "framer-motion";
@@ -67,7 +70,7 @@ AnimateButton.propTypes = {
 AnimateButton.defaultProps = {
   type: "scale",
 };
-const CustomRegistation = () => {
+const CustomRegistation = ({ setVal }) => {
   let cities = [
     "Select Cities",
     "Agra",
@@ -183,7 +186,6 @@ const CustomRegistation = () => {
   const formik = useFormik({
     initialValues: {
       name: "",
-      lastName: "",
       email: "",
       contact_number: "",
       country_code: "",
@@ -193,7 +195,21 @@ const CustomRegistation = () => {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      const url = 'http://localhost:5555/users/registration';
+      axios.post(url, values)
+        .then(response => {
+          console.log("Ashish", response.status)
+          if (response.status == 200) {
+            toast.success('POST request successful!', {
+              position: toast.POSITION.TOP_RIGHT
+            });
+            setVal(val => !val)
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+      // alert(JSON.stringify(values, null, 2));
     },
   });
   return (
@@ -365,7 +381,7 @@ const CustomRegistation = () => {
                       style={{
                         // backgroundColor: "green",
                         color: "white",
-                        padding:"10px 40px"
+                        padding: "10px 40px"
                       }}
                     >
                       SUBMIT
