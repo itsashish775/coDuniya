@@ -17,29 +17,31 @@ const PopRegistrationForm = ({ setVal }) => {
     })
     return (
         <>
-            <div className="pop_up">
-                <div className="left">
-                    <div className="heading">
-                        How Collegedunia helps you in Admission
-                    </div>
-                    <div className="cardSection">
-                        {items}
-                    </div>
-                </div>
-                <div className="right">
-                    <div className="cross" onClick={() => setVal(val => !val)} > X</div>
-                    <div className="right-header">
-                        <div className="image">
-                            <img src={peperpen} alt="" />
+            <div className="bgBlur">
+                <div className="pop_up">
+                    <div className="left">
+                        <div className="heading">
+                            How Collegedunia helps you in Admission
                         </div>
-                        <div className="text">
-                            <h1>Register Now To Apply</h1>
-                            <p>Get details and latest updates</p>
+                        <div className="cardSection">
+                            {items}
                         </div>
                     </div>
-                    <CustomRegistation />
-                </div>
-            </div >
+                    <div className="right">
+                        <div className="cross" onClick={() => setVal(val => !val)} > X</div>
+                        <div className="right-header">
+                            <div className="image">
+                                <img src={peperpen} alt="" />
+                            </div>
+                            <div className="text">
+                                <h1>Register Now To Apply</h1>
+                                <p>Get details and latest updates</p>
+                            </div>
+                        </div>
+                        <CustomRegistation />
+                    </div>
+                </div >
+            </div>
         </>
     )
 }
