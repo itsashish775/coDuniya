@@ -51,7 +51,7 @@ const validationSchema = Yup.object({
 function AnimateButton({ children, type }) {
   switch (type) {
     case "rotate": // only available in paid version
-    case "slide": // only available in paid version
+    case "slide": // only available in paid versionz   
     case "scale": // only available in paid version
     default:
       return (
@@ -71,8 +71,9 @@ AnimateButton.defaultProps = {
   type: "scale",
 };
 const CustomRegistation = () => {
-    let cities = [
-        "Agra",
+  let cities = [
+    "Select Cities",
+    "Agra",
     "Allahabad",
     "Aligarh",
     "Ambedkar Nagar",
@@ -174,6 +175,7 @@ const CustomRegistation = () => {
     { country: "India", code: "91", iso: "IN" },
   ];
   const universityDegrees = [
+      "Select Course",
     "Bachelor of Science",
     "Bachelor of Arts",
     "Master of Business Administration (MBA)",
@@ -181,260 +183,191 @@ const CustomRegistation = () => {
     "Ph.D. in Engineering",
     // Add more degrees as needed
   ];
-  const [buttonDisabled, setButtonDisabled] = useState(false);
-  const initialValues = {
-    name: "",
-    email: "",
-    password: "",
-    contact_number: "",
-    country_code: "91",
-    location: "",
-    checked: false,
-    course: "",
-    currentFile: "",
-    previewImage: "",
-    serverError: null,
-};
-console.log(initialValues);
-const {
-    handleBlur,
-    handleChange,
-    handleSubmit,
-    values,
-    errors,
-    setFieldValue,
-    touched,
-  } = useFormik({
-    initialValues: initialValues,
-    validationSchema: validationSchema,
-    enableReinitialize: true,
-    onSubmit: (values, { setErrors }) => {
-      try {
-        // setButtonDisabled(true);
-        // const formData = new FormData();
-        // formData.append('name', values.name);
-        // formData.append('email', values.email);
-        // formData.append('contact', values.contact_number);
-        // formData.append('country_code', values.country_code);
-        // formData.append('password', values.password);
-        // formData.append('profile_image', values.currentFile);
-        // addUserClick(values).then((res) => {
-        //     setButtonDisabled(false);
-        // });
-        alert("asdasdf")
-        alert(JSON.stringify(values, null, 2));
-      } catch (err) {
-        // setButtonDisabled(false);
-        alert("asdasdf")
-        setErrors({ serverError: err.message });
-      }
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      lastName: "",
+      email: "",
+      contact_number: "",
+      country_code: "",
+      course: "",
+      location: "",
+      checked: false,
+    },
+    validationSchema:validationSchema,
+    onSubmit: (values) => {
+      alert(JSON.stringify(values, null, 2));
     },
   });
   return (
-    <>
-      <div>
-        <Box sx={{ py: 5, px: 2 }}>
-          <form noValidate onSubmit={handleSubmit}>
-            <Grid container>
-              <Grid container mb={2} spacing={2}>
-                <Grid item xs={6} sm={6}>
-                  <Stack mb={2} spacing={1}>
-                    <InputLabel htmlFor="name-login">Full Name</InputLabel>
-                    <OutlinedInput
-                      id="name-login"
-                      type="text"
-                      value={values.name}
-                      name="name"
-                      onBlur={handleBlur}
-                      onChange={handleChange}
-                      placeholder="Full Name"
-                      fullWidth
-                      error={Boolean(touched.name && errors.name)}
-                    />
-                    {touched.name && errors.name && (
-                      <FormHelperText
-                        error
-                        id="standard-weight-helper-text-name-login"
-                      >
-                        {errors.name}
-                      </FormHelperText>
-                    )}
-                  </Stack>
-                  <Stack mb={2} spacing={1}>
-                    <InputLabel htmlFor="email-login">Mobile Number</InputLabel>
-                    <Stack direction="row" spacing={1}>
-                      <Grid xs={3} item>
-                        <Select
-                          name="country_code"
-                          value={values?.country_code || 91}
-                          onChange={handleChange}
-                          fullWidth
-                        >
-                          {countryCode.map((n, i) => (
-                            <MenuItem value={n.country}>
-                              {n.iso}(+{n.code} )
-                            </MenuItem>
-                          ))}
-                        </Select>
-                      </Grid>
-                      <Grid xs={9} item>
-                        <OutlinedInput
-                          id="contact_number"
-                          value={values.contact_number}
-                          name="contact_number"
-                          onBlur={handleBlur}
-                          onChange={handleChange}
-                          placeholder="Mobile Number"
-                          fullWidth
-                          error={Boolean(
-                            touched.contact_number && errors.contact_number
-                          )}
-                        />
-                      </Grid>
-                    </Stack>
-                    <Stack mb={2} spacing={1}>
-                      <InputLabel htmlFor="couses-login">
-                        Course Interested In
-                      </InputLabel>
-                      <Select
-                        name="course"
-                        value={values?.course && "Ashish"}
-                        onChange={handleChange}
-                        fullWidth
-                      >
-                        {universityDegrees.map((n, i) => (
-                          <MenuItem value={n} key={i}>
-                            {n}
-                          </MenuItem>
-                        ))}
-                      </Select>
-                      {touched.course && errors.course && (
-                        <FormHelperText
-                          error
-                          id="standard-weight-helper-text-name-login"
-                        >
-                          {errors.course}
-                        </FormHelperText>
-                      )}
-                    </Stack>
-                    {
-                      <FormHelperText
-                        error
-                        id="standard-weight-helper-text-country_code"
-                      >
-                        {touched.country_code && errors.country_code
-                          ? errors.country_code
-                          : touched.contact_number && errors.contact_number
-                          ? errors.contact_number
-                          : null}
-                      </FormHelperText>
-                    }
-                  </Stack>
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <Stack mb={2} spacing={1}>
-                    <InputLabel htmlFor="user_email">Email Address</InputLabel>
-                    <OutlinedInput
-                      id="user_email"
-                      type="email"
-                      value={values.email}
-                      name="email"
-                      onBlur={handleBlur}
-                      onChange={handleChange}
-                      placeholder="Email Address"
-                      fullWidth
-                      autoComplete="off"
-                      error={Boolean(touched.email && errors.email)}
-                    />
-                    {touched.email && errors.email && (
-                      <FormHelperText
-                        error
-                        id="standard-weight-helper-text-user_email"
-                      >
-                        {errors.email}
-                      </FormHelperText>
-                    )}
-                  </Stack>
-                  <Stack mb={2} spacing={1}>
-                    <InputLabel htmlFor="location-login">
-                      City You Live In
-                    </InputLabel>
+    <Box sx={{ py: 5, px: 2 }}>
+      <form onSubmit={formik.handleSubmit}>
+        <Grid container>
+          <Grid container mb={2} spacing={2}>
+            <Grid item xs={6} sm={6}>
+              <Stack mb={2} spacing={1}>
+                <InputLabel htmlFor="name">Full Name</InputLabel>
+                <OutlinedInput
+                  id="name"
+                  type="text"
+                  value={formik.values.name}
+                  name="name"
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                  placeholder="Full Name"
+                  fullWidth
+                  error={Boolean(formik.touched.name && formik.errors.name)}
+                />
+                {formik.touched.name && formik.errors.name && (
+                  <FormHelperText
+                    error
+                    id="standard-weight-helper-text-name-login"
+                  >
+                    {formik.errors.name}
+                  </FormHelperText>
+                )}
+              </Stack>
+              <Stack mb={2} spacing={1}>
+                <InputLabel htmlFor="">Mobile Number</InputLabel>
+                <Stack direction="row" spacing={1}>
+                  <Grid xs={3} item>
                     <Select
-                      name="location"
-                      value={values?.location && "Ashish"}
-                      onChange={handleChange}
+                      name="country_code"
+                      value={formik.values?.country_code || 91}
+                      onChange={formik.handleChange}
                       fullWidth
                     >
-                      {cities.map((n, i) => (
-                        <MenuItem value={n} key={i}>
-                          {n}
+                      {countryCode.map((n, i) => (
+                        <MenuItem value={n.code} key={i}>
+                          {n.iso}(+{n.code} )
                         </MenuItem>
                       ))}
                     </Select>
-                    {touched.location && errors.location && (
-                      <FormHelperText
-                        error
-                        id="standard-weight-helper-text-name-login"
-                      >
-                        {errors.location}
-                      </FormHelperText>
-                    )}
-                  </Stack>
-                  <Stack mb={2} spacing={1}>
-                    <InputLabel htmlFor="distance-login">
-                      Looking For New Distance Course?
-                    </InputLabel>
-                    <Switch
-                      name="checked"
-                      checked={values?.checked}
-                      onChange={handleChange}
-                      inputProps={{ "aria-label": "controlled" }}
-                      color="warning"
+                  </Grid>
+                  <Grid xs={9} item>
+                    <OutlinedInput
+                      id="contact_number"
+                      value={formik.values.contact_number}
+                      name="contact_number"
+                      onBlur={formik.handleBlur}
+                      onChange={formik.handleChange}
+                      placeholder="Mobile Number"
+                      fullWidth
+                      error={Boolean(
+                        formik.touched.contact_number &&
+                          formik.errors.contact_number
+                      )}
                     />
-                  </Stack>
-                </Grid>
-              </Grid>
-              {errors.submit && (
-                <Grid item xs={12} sm={6}>
-                  <FormHelperText error>{errors.submit}</FormHelperText>
-                </Grid>
-              )}
-              <Grid container spacing={2} ml={-2} mt={1}>
-                <Grid item>
-                  <AnimateButton>
-                    <Button
-                      disableElevation
-                      disabled={buttonDisabled}
-                      fullWidth
-                      size="large"
-                      type="submit"
-                      variant="contained"
-                      color="warning"
+                  </Grid>
+                </Stack>
+                <Stack mb={2} spacing={1}>
+                  <InputLabel htmlFor="couses-login">
+                    Course Interested In
+                  </InputLabel>
+                  <Select
+                    name="course"
+                    value={formik.values?.course || "Select Course"}
+                    onChange={formik.handleChange}
+                    fullWidth
+                  >
+                    {universityDegrees.map((n, i) => (
+                      <MenuItem value={n} key={i}>
+                        {n}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                  {formik.touched.course && formik.errors.course && (
+                    <FormHelperText
+                      error
+                      id="standard-weight-helper-text-name-login"
                     >
-                      Save
-                    </Button>
-                  </AnimateButton>
-                </Grid>
-                <Grid item>
-                  <AnimateButton>
-                    <Button
-                      disableElevation
-                      disabled={buttonDisabled}
-                      fullWidth
-                      size="large"
-                      variant="outlined"
-                      color="warning"
-                    >
-                      Cancel
-                    </Button>
-                  </AnimateButton>
-                </Grid>
-              </Grid>
+                      {formik.errors.course}
+                    </FormHelperText>
+                  )}
+                </Stack>
+              </Stack>
             </Grid>
-          </form>
-        </Box>
-      </div>
-    </>
+            <Grid item xs={12} sm={6}>
+              <Stack mb={2} spacing={1}>
+                <InputLabel htmlFor="email">Email Address</InputLabel>
+                <OutlinedInput
+                  id="email"
+                  type="email"
+                  value={formik.values.email}
+                  name="email"
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                  placeholder="Email Address"
+                  fullWidth
+                  autoComplete="off"
+                  error={Boolean(formik.touched.email && formik.errors.email)}
+                />
+                {formik.touched.email && formik.errors.email && (
+                  <FormHelperText
+                    error
+                    id="standard-weight-helper-text-user_email"
+                  >
+                    {formik.errors.email}
+                  </FormHelperText>
+                )}
+              </Stack>
+              <Stack mb={2} spacing={1}>
+                <InputLabel htmlFor="location">City You Live In</InputLabel>
+                <Select
+                  name="location"
+                  value={formik.values?.location || "Select Cities"}
+                  onChange={formik.handleChange}
+                  fullWidth
+                >
+                  {cities.map((n, i) => (
+                    <MenuItem value={n} key={i}>
+                      {n}
+                    </MenuItem>
+                  ))}
+                </Select>
+                {formik.touched.location && formik.errors.location && (
+                  <FormHelperText
+                    error
+                    id="standard-weight-helper-text-name-login"
+                  >
+                    {formik.errors.location}
+                  </FormHelperText>
+                )}
+              </Stack>
+              <Stack mb={2} spacing={1}>
+                <InputLabel htmlFor="checked">
+                  Looking For New Distance Course?
+                </InputLabel>
+                <Switch
+                  name="checked"
+                  checked={formik.values?.checked}
+                  onChange={formik.handleChange}
+                  inputProps={{ "aria-label": "controlled" }}
+                  color="warning"
+                />
+              </Stack>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid container spacing={2} ml={-2} mt={1}>
+          <Grid item>
+            <AnimateButton>
+              <Button
+                disableElevation
+                //   disabled={buttonDisabled}
+                fullWidth
+                size="large"
+                type="submit"
+                variant="contained"
+                color="warning"
+              >
+                Save
+              </Button>
+            </AnimateButton>
+          </Grid>
+        </Grid>
+      </form>
+    </Box>
   );
 };
 export default CustomRegistation;
