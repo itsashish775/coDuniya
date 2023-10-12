@@ -40,9 +40,6 @@ const validationSchema = Yup.object({
     .email("Please enter a valid email."),
   location: Yup.string().required("Location is required."),
   course: Yup.string().required("Course is required."),
-  password: Yup.string()
-    .matches(errMsg.passRegex, errMsg.pssvalidateString)
-    .required("Password is required."),
   contact_number: Yup.string().matches(
     /^[0-9]{8,14}$/,
     "Minimum 8 and maximum 14 numeric character allowed."
@@ -175,7 +172,7 @@ const CustomRegistation = () => {
     { country: "India", code: "91", iso: "IN" },
   ];
   const universityDegrees = [
-      "Select Course",
+    "Select Course",
     "Bachelor of Science",
     "Bachelor of Arts",
     "Master of Business Administration (MBA)",
@@ -194,13 +191,13 @@ const CustomRegistation = () => {
       location: "",
       checked: false,
     },
-    validationSchema:validationSchema,
+    validationSchema: validationSchema,
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
     },
   });
   return (
-    <Box sx={{ py: 5, px: 2 }}>
+    <Box sx={{ py: 5, px: 5 }}>
       <form onSubmit={formik.handleSubmit}>
         <Grid container>
           <Grid container mb={2} spacing={2}>
@@ -255,7 +252,7 @@ const CustomRegistation = () => {
                       fullWidth
                       error={Boolean(
                         formik.touched.contact_number &&
-                          formik.errors.contact_number
+                        formik.errors.contact_number
                       )}
                     />
                   </Grid>
@@ -349,21 +346,34 @@ const CustomRegistation = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid container spacing={2} ml={-2} mt={1}>
-          <Grid item>
-            <AnimateButton>
-              <Button
-                disableElevation
-                //   disabled={buttonDisabled}
-                fullWidth
-                size="large"
-                type="submit"
-                variant="contained"
-                color="warning"
-              >
-                Save
-              </Button>
-            </AnimateButton>
+        <div>By submitting this form, you accept and agree to our <span style={{ color: "#67c2e2", fontWeight: "500" }}>Terms of Use.</span></div>
+        <Grid container>
+          <Grid item xs={12} sm={12}>
+            <div className="form_bottom">
+              <div className="bottom_text">Already Registered? Click Here To Login.</div>
+              <div>
+                <Grid item>
+                  <AnimateButton>
+                    <Button
+                      disableElevation
+                      //   disabled={buttonDisabled}
+                      fullWidth
+                      size="large"
+                      type="submit"
+                      variant="contained"
+                      color="warning"
+                      style={{
+                        // backgroundColor: "green",
+                        color: "white",
+                        padding:"10px 40px"
+                      }}
+                    >
+                      SUBMIT
+                    </Button>
+                  </AnimateButton>
+                </Grid>
+              </div>
+            </div>
           </Grid>
         </Grid>
       </form>

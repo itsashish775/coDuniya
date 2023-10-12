@@ -10,7 +10,7 @@ import PopRegistrationForm from "./components/PopRegistrationForm";
 import { useState } from "react";
 
 function App() {
-  const [val, setVal] = useState(true);
+  const [val, setVal] = useState(false);
   return (
     <>
       {/* <Header/> */}

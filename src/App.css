@@ -319,11 +319,13 @@
 .goal_section .slick-next:hover {
   color: black;
 }
-.CollegeSection h1{
+
+.CollegeSection h1 {
   font-size: 45px;
   font-weight: 500;
   color: rgb(37, 37, 37);
 }
+
 .college_Card1 {
   position: relative;
   margin: 15px;
@@ -346,22 +348,24 @@
   position: absolute;
   bottom: 40px;
 }
-.card_data .text{
+
+.card_data .text {
   /* display: flex; */
   font-weight: 500;
   font-size: 25px;
   /* flex-wrap: wrap; */
   width: 250px;
-  padding-left:10px ;
+  padding-left: 10px;
   color: rgb(222, 222, 222);
   background-color: #00000060;
 }
 
 .indexedImg {
   position: relative;
- 
+
 }
-.allImage{
+
+.allImage {
   height: 30px;
   width: 30px;
   border: 1px solid black;
@@ -369,22 +373,23 @@
   position: absolute;
   margin-left: 10px;
 }
+
 .allImage1 {
-  
+
   z-index: 1;
   left: 0;
   background-color: #ff7700cb;
 }
 
 .allImage2 {
- 
+
   z-index: 2;
   left: 20px;
   background-color: #81b76680;
 }
 
 .allImage3 {
-  
+
   z-index: 3;
   left: 40px;
   background-color: #001effae;
@@ -393,39 +398,45 @@
 .allImage img {
   width: 100%;
 }
-.listItemCollege{
+
+.listItemCollege {
   display: flex;
   flex-wrap: wrap;
 }
-.pop_up{
+
+.pop_up {
   width: 1500px;
-  height: 800px;
-  position: absolute;
-  top: 10%;
+  height: 750px;
+  position: fixed;
+  top: 8%;
   left: 10%;
   margin: 0 auto;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 0 10px 2px black;
   display: flex;
+  z-index: 4;
 }
-.pop_up .left{
-  height: 800px;
+
+.pop_up .left {
+  height: 750px;
   width: 35%;
-  border: 1px solid red;
   padding: 35px 25px;
   background-color: #f8f8f8;
 }
-.pop_up .right{
-  height: 800px;
+
+.pop_up .right {
+  height: 750px;
   width: 65%;
   position: relative;
 }
-.left .heading{
+
+.left .heading {
   font-size: 25px;
   word-spacing: 2px;
 }
-.right .cross{
+
+.right .cross {
   background-color: rgba(181, 180, 180, 0.303);
   border-radius: 50%;
   display: inline;
@@ -437,22 +448,26 @@
   font-weight: 100;
   cursor: pointer;
 }
-.left .image{
+
+.left .image {
   width: 50px;
   height: 50px;
   margin-bottom: 10px;
   /* margin: 0 auto; */
 }
-.left .image img{
+
+.left .image img {
   width: 100%;
 }
-.cardSection{
+
+.cardSection {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 
 }
-.card1{
+
+.card1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -463,4 +478,50 @@
   background-color: white;
   box-shadow: 0 0 2px 0px rgb(0, 0, 0);
   border-radius: 5px;
+}
+
+.right-header {
+  display: inline-flex;
+  align-items: center;
+  padding: 20px 30px;
+}
+
+.right-header .text {
+  /* background-color: blue; */
+}
+.right-header .text h1{
+  line-height: 60px;
+  /* background-color: red; */
+  font-size: 40px;
+  font-weight: 400;
+  color: #ff7900;
+}
+.right-header .text p{
+  font-size: 25px;
+  font-weight: 400;
+  /* color: #ff7900; */
+}
+
+.right-header .image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  padding: 20px;
+  margin-right: 10px;
+  box-shadow: -1px 1px 3px 1px;
+}
+
+.right-header .image img {
+  width: 100%;
+  /* border-radius: 50%; */
+}
+.form_bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bottom_text{
+  color: #ff7900;
+  font-size: 20px;
+  font-weight: 400;
 }

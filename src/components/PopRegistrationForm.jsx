@@ -1,4 +1,5 @@
 import user from "../assets/images/user.png"
+import peperpen from "../assets/images/peperpen.png"
 import CustomRegistation from "./CustomRegistation"
 
 const PopRegistrationForm = ({ setVal }) => {
@@ -27,7 +28,16 @@ const PopRegistrationForm = ({ setVal }) => {
                 </div>
                 <div className="right">
                     <div className="cross" onClick={() => setVal(val => !val)} > X</div>
-                    <CustomRegistation/>
+                    <div className="right-header">
+                        <div className="image">
+                            <img src={peperpen} alt="" />
+                        </div>
+                        <div className="text">
+                            <h1>Register Now To Apply</h1>
+                            <p>Get details and latest updates</p>
+                        </div>
+                    </div>
+                    <CustomRegistation />
                 </div>
             </div >
         </>
