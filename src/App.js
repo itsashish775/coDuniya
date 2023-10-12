@@ -7,10 +7,13 @@ import SearchBox from "./components/SearchBox";
 import StudyGoals from "./components/StudyGoals";
 import SchoolSection from "./components/SchoolSection";
 import PopRegistrationForm from "./components/PopRegistrationForm";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [val, setVal] = useState(false);
+  useEffect(() => {
+    setTimeout(() => setVal(true), 10000)
+  }, [])
   return (
     <>
       {/* <Header/> */}
@@ -20,7 +23,7 @@ function App() {
           <Header />
           <ListBar />
           <DynamicText />
-          <SearchBox setVal={setVal}/>
+          <SearchBox setVal={setVal} />
         </div>
         <div className="body">
           <StudyGoals />
